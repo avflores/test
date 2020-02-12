@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view contentType="text/html">
+	<h:head />
+	<h:body>
+		<h:form>
+			<br />
+      	Ingrese el número de placa. Ejemplo PCQ-8381:
+      	<br />
+			<br />
+			<h:inputText value="#{picoPlaca.placa}"></h:inputText>
+			<br />
+			<br />
+			Ingrese la fecha en el siguiente formato dia/mes/año. Ejemplo 31/01/2020
+			<h:inputText value="#{picoPlaca.inFecha}"></h:inputText>
+			<br />
+			<br />
+			Ingrese la hora en el siguiente formato Hora:Minuto. Ejemplo 12:01
+			<h:inputText value="#{picoPlaca.inHora}"></h:inputText>
+			
+			
+
+			<h:commandButton value="Validar" action="#{picoPlaca.validarPicoPlaca()}"
+				update=":lblMensaje">
+
+			</h:commandButton>
+			<br />
+			<br />
+			<br />
+			<p:spinner></p:spinner>
+
+			<h:outputText id="lblMensaje" value="#{picoPlaca.mensaje}"></h:outputText>
+
+		</h:form>
+	</h:body>
+</f:view>
+</html>
